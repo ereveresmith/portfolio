@@ -7,21 +7,26 @@ const StyledButton = Styled.button`
   border-radius: 6px;
   color: #353535;
   font-weight: 500;
+  background-color: white;
   font-size: 18px;
-  border: 2px solid grey;
-  outline: 0;
+  border: 3px solid #7b7b7b;
   cursor: pointer;
+  outline: 0;
   transition: backgreound-color 250ms ease;
 
   &:hover {
-    background-color: #6699ff;
-    color: white;
+    background-color: #ccebff;
+  }
+
+  &:active {
+    background-color: #99d6ff;
+    border-color: #666666;
   }
 
   &:focus {
-    background-color: #4d88ff;
-    color: white;
+    outline: 1px #33adff solid;
   }
+
 `;
 
 const Button = (props) => {

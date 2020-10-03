@@ -1,6 +1,7 @@
-import React from 'react';
-import Button from './components/Button';
+import React, {useState} from 'react';
 import Styled from 'styled-components';
+import StartPage from './pages/StartPage';
+import HomePage from './pages/HomePage';
 
 const handleClick = () => {
   console.log('Clicked the button');
@@ -22,21 +23,28 @@ const TopAligned = Styled.div`
   align-self: baseline;
 `
 
+
 const Portfolio = () => {
+  const [page, setPage] = useState('start');
+
+  const handleGotoHome = () => {
+    setPage('home');
+  }
+
+  const renderPage = () => {
+    switch(page) {
+      case 'start': 
+        return <StartPage onNext={handleGotoHome}></StartPage>;
+      case 'home': 
+        return <HomePage></HomePage>;
+      case 'default': 
+        return <StartPage></StartPage>;
+    }
+  }
+
   return (
     <div className="Portfolio">
-      <Grid>
-        <BottomAligned>
-          <h1>Welcome</h1>
-        </BottomAligned>
-        <TopAligned>
-          <Button 
-            label={"Check out my portfolio"}
-            color={'blue'}
-            onClick={handleClick}
-          / >
-        </TopAligned>
-      </Grid>
+      {renderPage()}
     </div>
   );
 }
