@@ -28,7 +28,7 @@ const Card = (props) => {
         <InnerText>
           <h2>{props.title}</h2>
           {props.content}
-          <Button label={"See more"}></Button>
+          <Button label={"Learn More"}></Button>
         </InnerText>
     </Wrapper>
   );
