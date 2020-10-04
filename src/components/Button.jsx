@@ -2,29 +2,30 @@ import React from 'react';
 import Styled from 'styled-components';
 
 const StyledButton = Styled.button`
-  padding: 16px;
+  padding: 8px 16px;
+  border-radius: 24px;
   margin: 8px;
-  border-radius: 6px;
-  color: #353535;
-  font-weight: 500;
-  background-color: white;
-  font-size: 18px;
-  border: 3px solid #7b7b7b;
+  border-radius: 24px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 800;
+  background-color: #9999ff;
+  font-size: 14px;
+  border: 0;
   cursor: pointer;
   outline: 0;
   transition: backgreound-color 250ms ease;
 
   &:hover {
-    background-color: #ccebff;
+    background-color: #8080ff;
   }
 
   &:active {
-    background-color: #99d6ff;
-    border-color: #666666;
+    background-color: #6666ff;
   }
 
   &:focus {
-    outline: 1px #33adff solid;
+    outline: 1px #6666ff solid;
   }
 
 `;
