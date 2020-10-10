@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Styled from 'styled-components';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
+import AboutPage from './pages/AboutPage';
 
 const Portfolio = () => {
   const [page, setPage] = useState('projects');
@@ -13,7 +14,7 @@ const Portfolio = () => {
   const NavBar = Styled.nav`
     width: 100%;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     justify-content: end;
     border: 2px solid #f5f5f5;
     box-shadow: 1px 1px 1px #d9d9d9;
@@ -49,6 +50,8 @@ const Portfolio = () => {
         return <HomePage onNext={gotoPage('projects')}></HomePage>;
       case 'projects': 
         return <ProjectsPage></ProjectsPage>;
+      case 'about': 
+        return <AboutPage></AboutPage>;
       case 'default': 
         return <ProjectsPage></ProjectsPage>;
     }
@@ -59,6 +62,7 @@ const Portfolio = () => {
       <NavBar>
         <Link onClick={gotoPage('home')}>Home</Link>
         <Link onClick={gotoPage('projects')}>Projects</Link>
+        <Link onClick={gotoPage('about')}>About</Link>
       </NavBar>
       {renderPage()}
     </div>

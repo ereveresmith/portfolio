@@ -13,6 +13,11 @@ const Wrapper = Styled.div`
   border: 2px solid #f5f5f5;
   height: 240px;
   box-shadow: 3px 3px 10px #d9d9d9;
+  transition: background-color 10ms ease-out;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
 `
 
 const InnerText = Styled.span`
@@ -29,6 +34,7 @@ const Card = (props) => {
           <h2>{props.title}</h2>
           {props.content}
           <Button label={"Learn More"}></Button>
+          <Button label={"Info"} isGrey></Button>
         </InnerText>
     </Wrapper>
   );

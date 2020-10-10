@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Button from '../components/Button';
 import Styled from 'styled-components';
 import Card from '../components/Card';
+import Section from '../components/Section';
 
 const handleClick = () => {
   console.log('Clicked the button');
@@ -39,7 +40,9 @@ const renderedProjects = Projects.map((project) => {
 const ProjectsPage = () => {
   return (
     <OuterGrid>
+      <Section>
       <h1>Projects</h1> 
+      </Section>
       <ProjectsGrid>
         {renderedProjects}
       </ProjectsGrid>
